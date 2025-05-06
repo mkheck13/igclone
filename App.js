@@ -14,7 +14,6 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <HeaderComponent />
       <PostComponent />
-      <StoriesComponent />
       <FooterComponent />
       <StatusBar style='light'/>
     </SafeAreaView>
