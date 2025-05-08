@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import StoriesComponent from './StoriesComponent'
 import mike from '../assets/mike.jpg'
 import pirate from '../assets/pirate.jpg'
+import { FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import { faHeart, faPaperPlane, faComment, faBookmark } from '@fortawesome/free-regular-svg-icons'
 
 export default function PostComponent() {
   const [post, setPost] = useState([
@@ -66,8 +68,24 @@ export default function PostComponent() {
               </View>
 
               {/* Parent container for our icons and likes */}
-              <View>
-                
+              <View style={{flexDirection: "row"}}>
+
+                <View style={{flexDirection: "row", flex: 1, alignItems: "center", paddingLeft: 14, paddingTop: 10}}>
+                  <FontAwesomeIcon icon={faHeart} style={{color: "white", marginRight: 10}} size={25}/>
+                  <Text style={{color: "white", fontWeight: "bold", marginRight: 10}}>{post.numOfLikes}</Text>
+                  <FontAwesomeIcon icon={faComment} style={{color: "white", transform: [{ rotateY: "180deg"}],  marginRight: 20}} size={25} />
+                  <FontAwesomeIcon icon={faPaperPlane}  style={{color: "white"}} size={25}/>
+                </View> 
+
+                <View style={{paddingTop: 10, justifyContent: "center",marginRight: 10}}>
+                  <FontAwesomeIcon icon={faBookmark} style={{color: "white"}} size={25}/> 
+                </View> 
+              </View>
+              
+                {/* Description container */}
+              <View style={{flex: 1, flexDirection: "row", paddingTop: 5}}>
+                <Text style={{color: "white",fontWeight: "bold", paddingLeft: 14}}>{post.userName}</Text>
+                <Text style={{color: "white", paddingLeft: 5}}>{post.description}</Text>
               </View>
 
             </View>
