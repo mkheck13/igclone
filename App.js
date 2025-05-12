@@ -13,7 +13,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent />
-      <PostComponent />
+      {/* Main scrollable content area */}
+      <View style={{flex: 1, paddingBottom: 70}}>
+        <PostComponent />
+      </View>
+      
       <FooterComponent />
       <StatusBar style='light'/>
     </SafeAreaView>
@@ -27,6 +31,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
+    flex: 1
 
   },
 });
